@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontuação</title>
+</head>
+
+<body>
+    <script defer>
+
+        let quantidadeDeJogos = parseInt(prompt("Quantos jogos você já competiu? "))
+
+        let pontos = [];
+
+        function Pontuacao(quantidadeDeJogos) {
+            
+            for (let i = 0; i < quantidadeDeJogos; i++) {
+                pontos.push(parseInt(prompt(`Digite a sua pontuação no ${i + 1} jogo: `)))
+            }
+
+            let maiorPontuação = pontos[0], menorPontuação = pontos[0];
+            
+            for (let j = 0; j < pontos.length; j++) {
+                if (pontos[j] > maiorPontuação) {
+                    maiorPontuação = pontos[j];
+                }
+                if (pontos[j] < menorPontuação) {
+                    menorPontuação = pontos[j];
+                }
+            }
+
+            return alert(`A maior pontuação foi ${maiorPontuação} e a menor pontuação foi ${menorPontuação}.`)
+
+        }
+
+        Pontuacao(quantidadeDeJogos)
+        document.write(pontos)
+
+    </script>
+</body>
+
+</html>

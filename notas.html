@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+
+    <label for="nota">Informe a sua nota:</label>
+    <input type="number" id="nota"><br>
+    <button id="submit">Submeter</button>
+
+    <script defer>
+
+        const nota = document.querySelector('#nota');
+        const submit = document.querySelector('#submit');
+
+        let notaTransformadaEmParseInt;
+        nota.addEventListener('change', (e) => {
+            notaTransformadaEmParseInt = parseInt(e.target.value)
+        })
+
+        function Notas() {
+
+            let condiçãoParaArredondamento = notaTransformadaEmParseInt % 5 === 3 || notaTransformadaEmParseInt % 5 === 4;
+            let mesmaNota = notaTransformadaEmParseInt % 5 === 1 || notaTransformadaEmParseInt % 5 === 2;
+            let arredondamento = notaTransformadaEmParseInt % 5
+            let resultadoDoArredondamento = notaTransformadaEmParseInt + 5 - arredondamento;
+
+            if (notaTransformadaEmParseInt >= 38 && condiçãoParaArredondamento) {
+                document.write(`Você foi aprovado com ${resultadoDoArredondamento}.`)
+            }
+            else if (notaTransformadaEmParseInt >= 38 && mesmaNota) {
+                document.write(`Você foi aprovado com nota ${notaTransformadaEmParseInt}.`)
+            }
+            else {document.write(`Você foi reprovado com nota ${notaTransformadaEmParseInt}.`)}
+
+        }
+
+        submit.addEventListener('click', Notas)
+
+    </script>
+</body>
+</html>

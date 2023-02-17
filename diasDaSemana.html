@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dias da semana</title>
+</head>
+<body>
+
+    <label for="diaDaSemana">Selecione um dia da semana por meio dos números, levando em conta que domingo é 1 e sábado é 7:</label>
+    <select id="diaDaSemana">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+    </select>
+    <button id="submit">Submeter</button>
+    <p id="resultado"></p>
+
+    <script defer>
+
+        const submit = document.querySelector('#submit')
+        const resultado = document.getElementById('resultado')
+        const diaDaSemana = document.querySelector('#diaDaSemana')
+        let value;
+        diaDaSemana.addEventListener("onchange",(e)=>{
+            value = e.target.value
+        })
+
+        function DiasDaSemana() {
+            
+            switch (diaDaSemana.value) {
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                    resultado.textContent = "dia útil";
+                    break;
+                case '1':
+                case '7':
+                    resultado.textContent = "fim de semana";
+                    break;
+                default:
+                    resultado.textContent = "dia inválido";
+                    break;
+            }
+
+        }
+
+        submit.addEventListener('click', DiasDaSemana)
+
+    </script>
+</body>
+</html>

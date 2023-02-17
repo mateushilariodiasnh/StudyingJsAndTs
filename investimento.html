@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investimento</title>
+</head>
+<body>
+    <script>
+
+        let capitalInicial = parseFloat(prompt("Digite o capital inicial investido:"))
+        let taxaDeJuros = parseFloat(prompt("Digite a taxa de juros da aplicaçãp:"))
+        let tempoDeAplicação = parseFloat(prompt("Digite o ntempo de apolicação no investimnento:"))
+
+        function jurosSimples(capitalInicial, taxaDeJuros, tempoDeAplicação) {
+            let valorDaAplicaçãoSobJurosSimpoles
+
+                valorDaAplicaçãoSobJurosSimpoles = capitalInicial *  taxaDeJuros * tempoDeAplicação
+
+            return alert(valorDaAplicaçãoSobJurosSimpoles)
+        }
+
+        function jurosCompostos(capitalInicial, taxaDeJuros, tempoDeAplicação) {
+            let valorDaAplicaçãoSobJurosCompostos
+
+                valorDaAplicaçãoSobJurosCompostos = capitalInicial * (( 1 + taxaDeJuros) ** tempoDeAplicação)
+
+            return alert(valorDaAplicaçãoSobJurosCompostos)
+        }
+
+        jurosSimples(capitalInicial, taxaDeJuros, tempoDeAplicação)
+
+        jurosCompostos(capitalInicial, taxaDeJuros, tempoDeAplicação)
+
+    </script>
+</body>
+</html>

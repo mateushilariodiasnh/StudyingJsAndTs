@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de carro</title>
+</head>
+<body>
+    
+    <p id="feedback"></p>
+
+    <script>
+
+        const feedback = document.getElementById('feedback')
+        let carro = prompt("Qual modelo de carro você deseja:")
+
+        function CompraDeCarro(carro) {
+
+            switch (carro) {
+                case 'hatch':
+                    feedback.textContent = "Compra efetuada com sucesso!!!";
+                    break;
+                case 'sedans':
+                case 'motocicletas':
+                case 'caminhonetes':
+                    feedback.textContent = "Tem certeza que prefere este modelo?";
+                    break;
+                default:
+                    feedback.textContent = "Não trabalhamos com este tipo de automóvel aqui."
+            }
+
+        }
+
+        CompraDeCarro(carro)
+
+    </script>
+</body>
+</html>

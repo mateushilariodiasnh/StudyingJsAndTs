@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações</title>
+</head>
+<body>
+    <script>
+
+        function Operacoes(numberOne, numberTwo) {
+
+            let adicao = numberOne + numberTwo;
+            let subtracao = numberOne - numberTwo;
+            let multiplicacao = numberOne * numberTwo;
+            let divisao = numberOne / numberTwo
+
+            return(
+                console.log(`a adição é ${adicao}`),
+                console.log(`a subtração é ${subtracao}`),
+                console.log(`a multiplicação é ${multiplicacao}`),
+                console.log(`a divisão é ${divisao}`)
+            )
+        }
+
+        let numberOne = 24;
+        let numberTwo = 56;
+
+        console.log(Operacoes(numberOne, numberTwo))
+
+    </script>
+</body>
+</html>

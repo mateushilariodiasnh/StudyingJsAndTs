@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dividendos de três</title>
+</head>
+<body>
+
+    <label for="dividendo">Digite o dividendo:</label>
+    <br>
+    <input id="dividendo" type="number">
+    <hr>
+    <button id="enviar" onclick="verificarDivisibilidadePorTrês(dividendoTransformadoEmNúmero)">Enviar</button>
+    <p id="resultado"></p>
+
+    <script defer>
+
+        const dividendo = document.querySelector('#dividendo');
+        
+        let dividendoTransformadoEmNúmero;
+        dividendo.addEventListener('change', (e) => {
+            dividendoTransformadoEmNúmero = parseFloat(e.target.value)
+        })
+
+        function verificarDivisibilidadePorTrês(dividendoTransformadoEmNúmero) {
+            
+            let resultadoElement = document.querySelector('#resultado')
+            let resultado;
+
+            if (dividendoTransformadoEmNúmero % 3 === 0) {
+                resultado = `É divisivel por três`;
+            } else {
+                resultado =`Não é divisivel por três`;
+            }
+
+            resultadoElement.textContent = resultado
+            
+        }        
+
+    </script>
+</body>
+</html>
