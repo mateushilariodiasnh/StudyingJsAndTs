@@ -13,10 +13,11 @@
 
         function PontoParaVirgula(numeroComPonto) {
             
-            let numeroComVirgulaConvertido = parseFloat(numeroComPonto.toFixed(2))
+            let numeroComVirgulaConvertido = parseFloat(numeroComPonto)
+            numeroComPonto = numeroComVirgulaConvertido.toFixed(2)
             let numeroComVirgula = numeroComPonto.replace('.',',')
 
-            console.log(numeroComVirgula);
+            return console.log(numeroComVirgula);
 
         }
 
