@@ -9,15 +9,18 @@
 <body>
     <script>
 
-        let numeroComPonto = prompt("Digite o número:")
+        let numeroComPonto = prompt("Digite o número com ponto:")
 
         function PontoParaVirgula(numeroComPonto) {
             
-            let dinheiro = numeroComPonto.toString;
+            let numeroComVirgulaConvertido = parseFloat(numeroComPonto.toFixed(2))
+            let numeroComVirgula = numeroComPonto.replace('.',',')
 
-            
+            console.log(numeroComVirgula);
 
         }
+
+        PontoParaVirgula(numeroComPonto)
 
     </script>
 </body>

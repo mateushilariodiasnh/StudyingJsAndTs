@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontuação</title>
+</head>
+<body>
+    <script>
+        //Quantas vezes obteve recordes no jogo?
+        
+        let pontuacoes = ['10 20 20 8 25 3 0 30 1'];
+        let pontuacoesConvertido = pontuacoes[0].replace('[','').replace(']','').split(' ').map(numero => parseInt(numero));
+
+        function Pontuacao(pontuacoesConvertido) {
+
+            let maiorPontuacao = pontuacoesConvertido[0];
+            let menorPontuacao = pontuacoesConvertido[0];
+            let auxiliarDeContagem = 0
+
+            for (let i = 0; i < pontuacoesConvertido.length; i++) {
+                if (pontuacoesConvertido[i] > maiorPontuacao) {
+                    maiorPontuacao = pontuacoesConvertido[i];
+                    auxiliarDeContagem++
+                }
+                if (pontuacoesConvertido[i] < menorPontuacao) {
+                    menorPontuacao = pontuacoesConvertido[i];
+                    
+                }
+            }
+
+            menorPontuacao = pontuacoesConvertido.indexOf(menorPontuacao)
+
+            console.log(auxiliarDeContagem)
+            console.log(menorPontuacao + 1)
+
+        }
+
+        Pontuacao(pontuacoesConvertido)
+
+    </script>
+</body>
+</html>
