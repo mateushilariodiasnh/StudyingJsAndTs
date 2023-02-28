@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+</head>
+
+<body>
+    <article>
+        <table>
+            <caption style="color:blanchedalmond; background-color: darkslategray;">Cardápio</caption>
+
+            <colgroup> <!--agrupar as colunas-->
+                <col style="background-color: red"> <!--Primeira coluna-->
+                <col span="2" style="background-color: blue"> <!--4 colunas finais pelo span-->
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Descrição do produto</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th>100</th>
+                    <th>Cachorro Quente</th>
+                    <th>R$:3,00</th>
+                </tr>
+                <tr>
+                    <th>200</th>
+                    <th>Hambúrguer Simples</th>
+                    <th>R$:4,00</th>
+                </tr>
+                <tr>
+                    <th>300</th>
+                    <th>Cheeseburguer</th>
+                    <th>R$:5,50</th>
+                </tr>
+                <tr>
+                    <th>400</th>
+                    <th>Bauru</th>
+                    <th>R$:7,50</th>
+                </tr>
+                <tr>
+                    <th>500</th>
+                    <th>Refrigerante</th>
+                    <th>R$:3,50</th>
+                </tr>
+                <tr>
+                    <th>600</th>
+                    <th>Suco</th>
+                    <th>R$:2,80</th>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+
+    <label for="codigoDoItem">Digite o código do item:</label><br>
+    <select name="" id="codigoDoItem">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+    </select><br>
+    <label for="quantidadeDoItem">Digite a quantidade de items:</label><br>
+    <input type="number" name="quantidadeDoItem" id="quantidadeDoItem"><br>
+    <button type="submit" id="submeter">Submeter</button>
+    <p id="valorFinalDaConta"></p>
+
+    <script defer>
+        const codigoDoItem = document.querySelector('#codigoDoItem');
+        const quantidadeDoItem = document.querySelector('#quantidadeDoItem');
+        const submeter = document.getElementById('submeter');
+        const valorFinalDaConta = document.getElementById('valorFinalDaConta');
+
+        let quantidadeDoItemConvertido;
+        quantidadeDoItem.addEventListener('change', (e) => {
+            quantidadeDoItemConvertido = parseInt(e.target.value)
+        })
+
+        function calculoDoValorFinal() {
+            let codigoDoItemConvertido = parseInt(codigoDoItem.value);
+            let valorFinal;
+
+            switch (codigoDoItemConvertido) {
+                case 100:
+                    valorFinal = 3 * quantidadeDoItemConvertido
+                    break;
+                case 200:
+                    valorFinal = 4 * quantidadeDoItemConvertido
+                    break;
+                case 300:
+                    valorFinal = 5.50 * quantidadeDoItemConvertido
+                    break;
+                case 400:
+                    valorFinal = 7.50 * quantidadeDoItemConvertido
+                    break;
+                case 500:
+                    valorFinal = 3.50 * quantidadeDoItemConvertido
+                    break;
+                case 600:
+                    valorFinal = 2.80 * quantidadeDoItemConvertido
+                    break;
+                default:
+                    valorFinal = "Produto não existente"
+                    break;
+            }
+            valorFinalDaConta.textContent = valorFinal;
+        }
+
+        submeter.addEventListener('click', calculoDoValorFinal)
+    </script>
+</body>
+
+</html>
