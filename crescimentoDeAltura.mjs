@@ -1,19 +1,26 @@
 let user = [
-    criancaOne = {
-        altura: 88,
-        taxaDeCrescimentoAnual: 0.12, 
+    {
+        "nome": "Gustavo",
+        "altura": 88,
+        "taxaDeCrescimentoAnual": 0.12, 
     },
-    criancaTwo = {
-        altura: 102,
-        taxaDeCrescimentoAnual: 0.7,
+    {
+        "nome": "Leonardo",
+        "altura": 102,
+        "taxaDeCrescimentoAnual": 0.7,
     }
 ]
 
+console.log(user)
+
 function crescimentoDeAltura(user) {
-    let alturaOne = uset[0].altura;
+    let alturaOne = user[0].altura;
     let alturaTwo = user[1].altura;
     let ano = 0;
 
+    // do {
+        
+    // } while ();
     
 }
 
