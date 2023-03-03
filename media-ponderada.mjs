@@ -16,8 +16,12 @@ function mediaPonderadaEClassificacao(aluno) {
         if (nota > maiorNota) {
             maiorNota = nota
             resultadopesoParaAMaiorNotasMultiplicacao = maiorNota * pesoParaAMaiorNota
+            console.log(resultadopesoParaAMaiorNotasMultiplicacao)
         }
-        else { resultadoPesoParaAsDemaisNotasSoma += nota * pesoParaAsDemaisNotas }
+        else {
+            console.log(nota * pesoParaAsDemaisNotas )
+            resultadoPesoParaAsDemaisNotasSoma += nota * pesoParaAsDemaisNotas 
+        }
     })
 
     mediaPonderada = (resultadoPesoParaAsDemaisNotasSoma + resultadopesoParaAMaiorNotasMultiplicacao) / (pesoParaAMaiorNota + (pesoParaAsDemaisNotas * 2))
