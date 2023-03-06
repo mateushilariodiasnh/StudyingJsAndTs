@@ -2,11 +2,11 @@ let user = [
     {
         "nome": "Gustavo",
         "altura": 88,
-        "taxaDeCrescimentoAnual": 0.12,
+        "taxaDeCrescimentoAnual": 1.2,
     },
     {
         "nome": "Leonardo",
-        "altura": 102,
+        "altura": 122,
         "taxaDeCrescimentoAnual": 0.7,
     }
 ]
@@ -20,12 +20,13 @@ function crescimentoDeAltura(user) {
         console.log("Eles possuem alturas iguais.")
     }
 
-    do {
-        alturaOne += alturaOne * user[0].taxaDeCrescimentoAnual;
-        alturaTwo += alturaTwo * user[1].taxaDeCrescimentoAnual;
+    while (alturaOne <= alturaTwo) {
+        alturaOne = (alturaOne * user[0].taxaDeCrescimentoAnual) + alturaOne;
+        alturaTwo = (alturaTwo * user[1].taxaDeCrescimentoAnual) + alturaTwo;
         ano++
-    } while (alturaOne <= alturaTwo);
+    }
 
+    console.log(alturaOne)
     console.log("ultrapassara em ", ano)
 
 }
